@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<h2>Transaction History</h2>
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Stock Name</th>
+        <th>Ticker</th>
+        <th>Method</th>
+        <th>Price</th>
+        <th>Number of Shares</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+        {% for i in session["stocks"] %}
+            <tr>
+                <td>{{ i["name"] }}</td>
+                <td>{{ i["ticker"] }}</td>
+                <td>{{ i["method"] }}</td>
+                <td>{{ i["price"] }}</td>
+                <td>{{ i["num_shares"] }}</td>
+                <td>{{ i["date"] }}</td>
+            </tr>      
+        {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

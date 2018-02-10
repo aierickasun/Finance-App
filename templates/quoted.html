@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('quote') }}" method="get">
+        <fieldset class="quote_class">
+            {% for quote in session["quotes"] %}
+                <br/>{{ quote }} : {{ session["quotes"][quote] }} <br/>
+                
+            {% endfor%}
+            <br/>Click here to get another quote:<br/>
+            <div class="form-group">
+                <a href="{{ url_for('quote')}}"><button class="btn btn-default">Look Up</button></a>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

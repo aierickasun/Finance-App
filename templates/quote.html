@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('quote') }}" method="post">
+        <fieldset class="quote_class">
+            <div class="form-group">
+                Give me a ticker symbol:
+                <input autocomplete="off" autofocus class="form-control" name="ticker_symbol" placeholder="ex. AMZN" type="text"/>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Look Up</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}
